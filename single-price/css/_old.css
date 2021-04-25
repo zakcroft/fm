@@ -1,0 +1,200 @@
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+:root {
+  --background: white;
+  --cyan: hsl(179, 62%, 43%);
+  --brightYellow: hsl(71, 73%, 54%);
+  --light-grey: hsl(204, 43%, 93%);
+  --greyishblue: hsl(218, 22%, 67%);
+  --box-shadow: hsla(218, 22%, 67%, 0.2);
+  --dark-green: hsl(179, 100%, 33%);
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: "Karla", sans-serif;
+  font-size: 1rem;
+  background-color: var(--light-grey);
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 375px;
+  height: 98%;
+}
+
+main {
+  width: 78%;
+  min-width: 311px;
+  background-color: var(--background);
+  border-radius: 5px;
+  box-shadow: 0 10px 20px 10px var(--box-shadow);
+}
+
+.top,
+.bottom-left,
+.bottom-right {
+  padding: 24px;
+}
+
+.top h2 {
+  color: var(--cyan);
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 28px;
+  letter-spacing: -0.3px;
+}
+
+.top h4 {
+  color: var(--brightYellow);
+  font-size: 0.9rem;
+  margin-top: 24px;
+  line-height: 26px;
+  letter-spacing: -0.175px;
+}
+
+.top p:last-child {
+  color: var(--greyishblue);
+  font-size: 0.9rem;
+  margin-top: 13px;
+  line-height: 24px;
+  opacity: 0.7;
+}
+
+.bottom {
+  display: block;
+  color: white;
+  font-size: 1.2rem;
+}
+
+.bottom-left,
+.bottom-right {
+  width: 100%;
+}
+
+.bottom-left {
+  background-color: var(--dark-green);
+  border-bottom-left-radius: 0;
+}
+
+.bottom-right {
+  background-color: var(--cyan);
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.cost {
+  margin-top: 18px;
+}
+
+.dollar {
+  font-size: 2rem;
+  line-height: 37px;
+  letter-spacing: -0.4px;
+}
+
+.per-month {
+  font-size: 1rem;
+  margin-left: 11px;
+  opacity: 0.5;
+  vertical-align: super;
+  line-height: 26px;
+  letter-spacing: -0.2px;
+  mix-blend-mode: normal;
+}
+
+.full-access {
+  font-size: 1rem;
+  margin-top: 4px;
+  line-height: 26px;
+  letter-spacing: -0.2px;
+  opacity: 0.8;
+}
+
+a {
+  display: block;
+  height: 50px;
+  color: white;
+  background-color: var(--brightYellow);
+  font-size: 1rem;
+  margin-top: 26px;
+  padding: 15px 0 14px;
+  line-height: 19px;
+  letter-spacing: -0.2px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 5px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.0973011);
+}
+
+.bottom-right ul {
+  margin-top: 18px;
+}
+
+li {
+  font-size: 0.9rem;
+  line-height: 20px;
+  letter-spacing: -0.175px;
+  mix-blend-mode: normal;
+  opacity: 0.75;
+}
+
+/*600px, 900px, 1200px, and 1800px*/
+/*https://www.freecodecamp.org/news/the-100-correct-way-to-do-css-breakpoints-88d6a5ba1862/*/
+
+@media only screen and (min-width: 600px) {
+  .bottom {
+    display: flex;
+  }
+  .bottom-left,
+  .bottom-right {
+    width: 50%;
+  }
+
+  .top,
+  .bottom-left,
+  .bottom-right {
+    padding: 21px;
+  }
+
+  .bottom-left {
+    border-bottom-left-radius: 5px;
+  }
+
+  .bottom-right {
+    border-bottom-left-radius: 0;
+  }
+
+  .top h4 {
+    font-size: 1rem;
+    line-height: 21px;
+    letter-spacing: -0.225px;
+  }
+
+  .top p:last-child {
+    color: var(--greyishblue);
+    margin-top: 11px;
+    line-height: 26px;
+    letter-spacing: -0.2px;
+  }
+}
+
+@media only screen and (min-width: 900px) {
+  .top,
+  .bottom-left,
+  .bottom-right {
+    padding: 40px;
+  }
+}
