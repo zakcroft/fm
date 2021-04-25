@@ -1,0 +1,28 @@
+@use "../_typography" as *;
+@use "../_vars" as *;
+
+.person {
+  &__pic {
+    $dim: 28px;
+    width: $dim;
+    height: $dim;
+    border-radius: $dim / 2;
+  }
+
+  &__info {
+    @include font($s: 13px, $lh: 13px);
+    display: inline-block;
+    margin: 0 0 4px 17px;
+    vertical-align: top;
+  }
+
+  &__verified {
+    @include font($s: 11px, $lh: 11px);
+    mix-blend-mode: normal;
+    opacity: 0.5;
+  }
+}
+.item_1 .person__pic,
+.item_5 .person__pic {
+  border: 2px solid #a775f1;
+}

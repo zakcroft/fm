@@ -1,0 +1,55 @@
+@use "../typography" as *;
+@use "../variables" as *;
+
+.zero-circle {
+  $rgba-grey: rgba(135, 135, 157, 0.25); //$grey
+
+  &--one {
+    margin-top: 80px;
+  }
+
+  &--two {
+    position: relative;
+    bottom: $zero-circle-two-offset;
+    margin-top: calc(64px + #{$zero-circle-two-offset});
+  }
+
+  &__line {
+    display: block;
+    transform: translatex(50%);
+    width: 56px;
+    height: 84px;
+    border-left: 1px $rgba-grey solid;
+  }
+
+  &__circle {
+    @include font($grey, $fw-med, 16px, 26px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    height: 56px;
+    border: 1px $rgba-grey solid;
+    border-radius: 28px;
+    background-color: white;
+  }
+}
+
+@media only screen and (min-width: $breakpoint-tablet) {
+  .zero-circle {
+    &--two {
+      margin-top: calc(80px + #{$zero-circle-two-offset});
+    }
+  }
+}
+
+@media only screen and (min-width: $breakpoint-desktop) {
+  .zero-circle {
+    &--one {
+      margin-top: 117px;
+    }
+    &--two {
+      margin-top: calc(72px + #{$zero-circle-two-offset});
+    }
+  }
+}

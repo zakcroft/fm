@@ -1,0 +1,12 @@
+{
+  "dependencies": {
+    "browser-sync": "^2.26.14",
+    "prettier": "^2.2.1",
+    "sass": "^1.32.8"
+  },
+  "scripts": {
+    "start": "npm run browser-sync & npm run compileSass",
+    "browser-sync": "browser-sync start --server -w --no-open --serveStatic=src",
+    "compileSass": "sass css/styles.scss ./src/css/styles.css --watch --embed-sources"
+  }
+}

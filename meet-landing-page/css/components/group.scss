@@ -1,0 +1,95 @@
+@use "../typography" as *;
+@use "../variables" as *;
+
+.group {
+  margin-top: 56px;
+
+  &--img--full {
+    width: 100%;
+  }
+
+  &--img--left {
+    display: none;
+    position: relative;
+    left: -25px;
+  }
+
+  &--img--right {
+    display: none;
+    position: relative;
+    right: -25px;
+  }
+
+  &-text {
+    width: 327px;
+    margin: 48px auto 0;
+
+    &__heading {
+      @include font($black, $fw-very-bold, 40px, 44px);
+      padding: 0 30px;
+      text-align: center;
+    }
+
+    &__description {
+      @include font($grey, $fw-med, 16px, 26px);
+      margin-top: 24px;
+      text-align: center;
+      opacity: 0.7;
+    }
+
+    &__btns {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin-top: 32px;
+    }
+  }
+}
+
+@media only screen and (min-width: $breakpoint-tablet) {
+  .group-text {
+    width: 457px;
+
+    &__heading {
+      @include font($black, $fw-very-bold, 48px, 48px);
+    }
+  }
+}
+
+@media only screen and (min-width: $breakpoint-desktop) {
+  .group {
+    display: flex;
+    width: 100%;
+
+    &--img--full {
+      display: none;
+    }
+
+    &--img--left {
+      display: block;
+      align-self: flex-start;
+      order: 1;
+    }
+
+    &--img--right {
+      display: block;
+      align-self: flex-end;
+      order: 3;
+    }
+
+    &-text {
+      width: 540px;
+      order: 2;
+
+      &__heading {
+        @include font($black, $fw-very-bold, 64px, 64px);
+      }
+
+      &__description {
+        @include font($grey, $fw-med, 18px, 26px);
+        margin-top: 34px;
+      }
+    }
+  }
+}

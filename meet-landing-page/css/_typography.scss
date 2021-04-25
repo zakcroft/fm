@@ -1,0 +1,32 @@
+@use "variables" as *;
+
+$font-size-base: 16px;
+$fw-med: 500;
+$fw--bold: 700;
+$fw-very-bold: 900;
+
+@function calculateRem($val) {
+  @return ($val / $font-size-base) * 1rem;
+}
+
+@mixin base-font {
+  font-family: "Red Hat Display", sans-serif;
+  color: $black;
+  font-weight: $fw-med;
+  font-size: $font-size-base;
+}
+
+@mixin font($color, $fw-weight, $size, $lh) {
+  @if $color {
+    color: $color;
+  }
+  @if $fw-weight {
+    font-weight: $fw-weight;
+  }
+  @if $size {
+    font-size: calculateRem($size);
+  }
+  @if $lh {
+    line-height: calculateRem($lh);
+  }
+}

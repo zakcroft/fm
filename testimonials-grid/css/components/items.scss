@@ -1,0 +1,33 @@
+@use "../_typography" as *;
+@use "../_vars" as *;
+
+.item {
+  padding: 26px 32px 32px;
+  box-shadow: 40px 60px 50px -47px rgba(72, 85, 106, 0.247378);
+  border-radius: 8px;
+
+  &_1 {
+    @include font($c: $white);
+    background-color: $moderate-violet;
+  }
+
+  &_2 {
+    @include font($c: $white);
+    background-color: $very-dark-grayish-blue;
+  }
+
+  &_3 {
+    @include font($c: $very-dark-grayish-blue);
+    background-color: $white;
+  }
+
+  &_4 {
+    @include font($c: $very-dark-grayish-blue);
+    background-color: $white;
+  }
+
+  &_5 {
+    @include font($c: $white);
+    background-color: $very-dark-blackish-blue;
+  }
+}

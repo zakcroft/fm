@@ -1,0 +1,56 @@
+@use "../typography" as *;
+@use "../variables" as *;
+
+.btn {
+  @include font($white, $fw-very-bold, 16px, 26px);
+  display: block;
+  height: 58px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 29px;
+
+  &--turquoise {
+    background-color: $turquoise;
+    &:hover {
+      background-color: $light-turquoise;
+      > .btn__download-version--turquoise {
+        color: $blue;
+      }
+    }
+  }
+
+  &--purple {
+    background-color: $purple;
+    &:hover {
+      background-color: $light-purple;
+      > .btn__download-version--purple {
+        color: $pink;
+      }
+    }
+  }
+}
+
+.btn__download {
+  width: 193px;
+  padding: 16px 0;
+}
+
+.btn__what {
+  width: 139px;
+  margin-top: 16px;
+  padding: 16px 0;
+}
+
+@media only screen and (min-width: $breakpoint-tablet) {
+  .btns {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .btn__what {
+    margin-top: 0;
+    margin-left: 16px;
+  }
+}

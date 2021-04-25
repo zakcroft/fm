@@ -1,0 +1,33 @@
+@use "reset";
+@use "typography" as *;
+@use "variables" as *;
+@use "components/header" as *;
+@use "components/group" as *;
+@use "components/buttons" as *;
+@use "components/zero-circle" as *;
+@use "components/meetings" as *;
+@use "components/info" as *;
+@use "components/footer" as *;
+
+html {
+  @include base-font;
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  min-width: 375px;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

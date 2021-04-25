@@ -1,0 +1,248 @@
+@import "reset";
+
+html {
+  box-sizing: border-box;
+  font-size: 15px;
+  position: relative;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+$font-family-spartan: "Spartan", sans-serif;
+$very-dark-magenta: hsl(300, 43%, 22%);
+$soft-pink: hsl(333, 80%, 67%);
+$dark-grayish-magenta: hsl(303, 10%, 53%);
+$light-grayish-magenta: hsl(300, 24%, 96%);
+$white: hsl(0, 0%, 100%);
+
+$font-weight-reg: 400;
+$font-weight-med: 500;
+$font-weight-bold: 700;
+
+body {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  font-family: $font-family-spartan;
+  font-weight: $font-weight-reg;
+  min-width: 375px;
+  max-width: 1440px;
+  margin: 0 auto;
+
+  &::before,
+  &::after {
+    position: absolute;
+  }
+
+  &::before {
+    content: url("../images/bg-pattern-top-mobile.svg");
+    top: 0;
+    left: 0;
+  }
+
+  &::after {
+    content: url("../images/bg-pattern-bottom-mobile.svg");
+    bottom: 0;
+    width: 100vw;
+  }
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  margin: 24px;
+}
+
+.opening {
+  &__header {
+    color: $very-dark-magenta;
+    font-weight: $font-weight-bold;
+    font-size: 2.134rem;
+    margin-top: 80px;
+    text-align: center;
+    letter-spacing: -1.14286px;
+  }
+
+  &__description {
+    color: $dark-grayish-magenta;
+    font-weight: $font-weight-med;
+    margin-top: 18px;
+    text-align: center;
+    line-height: 1.66;
+    letter-spacing: -0.5px;
+  }
+}
+
+.ratings {
+  margin-top: 40px;
+}
+
+.rating {
+  background-color: $light-grayish-magenta;
+  border-radius: 8px;
+  margin: 16px 0;
+  padding: 14px;
+
+  &__stars {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__star {
+    margin: 0 4px 0;
+    width: 16px;
+  }
+
+  &__text {
+    color: $very-dark-magenta;
+    font-weight: $font-weight-bold;
+    font-size: 0.867rem;
+    margin-top: 16px;
+    text-align: center;
+    line-height: 1.165;
+  }
+}
+
+.reviews {
+  margin-top: 49px;
+}
+
+.review {
+  max-height: 260px;
+  background-color: $very-dark-magenta;
+  margin-top: 16px;
+  border-radius: 8px;
+  padding: 40px 32px 32px;
+
+  &__profile-pic {
+    width: 40px;
+    border-radius: 20px;
+  }
+
+  &__info {
+    display: inline-block;
+    font-size: 0.867rem;
+    margin-left: 23px;
+    line-height: 1.166;
+    vertical-align: super;
+  }
+
+  &__name {
+    color: $white;
+    font-weight: $font-weight-bold;
+  }
+
+  &__verified {
+    color: $soft-pink;
+    margin-top: 5px;
+  }
+
+  &__comment {
+    color: $white;
+    font-size: 0.867rem;
+    font-weight: $font-weight-med;
+    margin-top: 26px;
+    line-height: 1.7;
+    letter-spacing: -0.232143px;
+  }
+}
+
+$breakpoint-large: 1200px;
+
+@media only screen and (min-width: $breakpoint-large) {
+  body {
+    &::before {
+      content: url("../images/bg-pattern-top-desktop.svg");
+      top: 0;
+      left: 0;
+    }
+
+    &::after {
+      content: url("../images/bg-pattern-bottom-desktop.svg");
+      bottom: 0;
+      width: auto;
+    }
+  }
+
+  main {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 127px 165px 100px;
+  }
+
+  .opening {
+    flex-basis: 50%;
+    padding-right: 100px;
+
+    &__header {
+      margin: 0;
+      font-size: 2.8rem;
+      text-align: left;
+      padding-right: 10px;
+    }
+
+    &__description {
+      text-align: left;
+    }
+  }
+
+  .ratings {
+    flex-basis: 49%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 0;
+  }
+
+  .rating {
+    display: flex;
+    align-items: flex-start;
+    min-width: 82%;
+    padding: 20px;
+
+    &:nth-child(2) {
+      align-self: center;
+    }
+
+    &:nth-child(3) {
+      align-self: flex-end;
+    }
+
+    &__stars {
+      margin-left: 5px;
+    }
+
+    &__text {
+      margin-top: 0;
+      margin-left: 30px;
+      text-align: unset;
+    }
+  }
+
+  .reviews {
+    display: flex;
+    justify-content: space-between;
+    height: 33vh;
+  }
+
+  .review {
+    flex-basis: 31%;
+    margin-top: 0;
+
+    &:nth-child(1) {
+      align-self: flex-start;
+    }
+
+    &:nth-child(2) {
+      align-self: center;
+    }
+
+    &:nth-child(3) {
+      align-self: flex-end;
+    }
+  }
+}

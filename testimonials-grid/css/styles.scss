@@ -1,0 +1,89 @@
+@use "_typography" as *;
+@use "_vars" as *;
+
+@import "reset";
+@import "components/items";
+@import "components/person-info";
+@import "components/testimonies";
+
+html {
+  @include font;
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  max-width: 1440px;
+}
+
+.container {
+  max-width: 1110px;
+  min-width: 327px;
+  display: grid;
+  grid-template-rows: auto;
+  grid-row-gap: 24px;
+  margin: 24px;
+}
+
+@media (min-width: $breakpoint-tablet) {
+  .container {
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 30px;
+  }
+
+  .item {
+    &_2 {
+      order: 2;
+    }
+
+    &_3 {
+      order: 1;
+    }
+
+    &_4 {
+      order: 3;
+    }
+
+    &_5 {
+      grid-column-start: 1;
+      grid-column-end: 3;
+      order: 4;
+    }
+  }
+}
+
+@media (min-width: $breakpoint-desktop) {
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  .container {
+    height: 572px;
+    grid-template-columns: repeat(4, 255px);
+    grid-template-rows: 282px 266px;
+  }
+
+  .item {
+    &_1 {
+      grid-column-start: 1;
+      grid-column-end: 3;
+    }
+    &_3 {
+      grid-column-start: 4;
+      grid-column-end: 5;
+      grid-row-start: 1;
+      grid-row-end: 3;
+    }
+
+    &_5 {
+      grid-column-start: 2;
+      grid-column-end: 4;
+    }
+  }
+}

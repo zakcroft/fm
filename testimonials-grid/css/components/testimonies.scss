@@ -1,0 +1,32 @@
+@use "../_typography" as *;
+@use "../_vars" as *;
+
+.testimony-heading {
+  @include font($fw: $fw-semi-bold, $s: 20px, $lh: 24px);
+  margin-top: 18px;
+}
+
+.item_5 .testimony-heading {
+  @include font(
+    $c: $light-grayish-blue,
+    $fw: $fw-semi-bold,
+    $s: 20px,
+    $lh: 24px
+  );
+}
+
+.testimony-follow-on {
+  @include font($s: 13px, $lh: 18px);
+  margin-top: 16px;
+  mix-blend-mode: normal;
+  opacity: 0.7;
+}
+
+.item_1 .testimony-follow-on {
+  @include font($c: $light-gray, $s: 13px, $lh: 18px);
+}
+
+.item_3 .testimony-follow-on,
+.item_4 .testimony-follow-on {
+  @include font($c: $very-dark-grayish-blue, $s: 13px, $lh: 18px);
+}

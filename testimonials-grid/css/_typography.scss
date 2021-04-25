@@ -1,0 +1,28 @@
+@use "_vars" as v;
+
+$font-size-base: 16px;
+$fw-med: 500;
+$fw-semi-bold: 600;
+
+@function calculateRem($val) {
+  @return ($val / $font-size-base) * 1rem;
+}
+
+//@font-face {
+//  font-family: "Barlow Semi Condensed medium";
+//  src: url("../fonts/BarlowSemiCondensed-Medium.ttf") format("truetype"),
+//  url("../fonts/BarlowSemiCondensed-Medium.ttf") format("truetype");
+//}
+
+@mixin font(
+  $c: inherit,
+  $fw: $fw-med,
+  $s: $font-size-base,
+  $lh: $font-size-base
+) {
+  font-family: "Barlow Semi Condensed", sans-serif;
+  color: $c;
+  font-weight: $fw;
+  font-size: calculateRem($s);
+  line-height: calculateRem($lh);
+}

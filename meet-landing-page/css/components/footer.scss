@@ -1,0 +1,87 @@
+@use "../typography" as *;
+@use "../variables" as *;
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-image: linear-gradient(
+      rgba(77, 150, 169, 0.9),
+      rgba(77, 150, 169, 0.9)
+    ),
+    url("../../assets/mobile/image-footer.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  text-align: center;
+  padding: 80px 24px 72px;
+
+  &__text--large {
+    @include font($white, $fw-very-bold, 32px, 36px);
+    max-width: 457px;
+    margin: 0 auto;
+  }
+
+  &__text--small {
+    @include font($white, $fw-med, 18px, 26px);
+    max-width: 575px;
+    margin: 24px auto 0;
+  }
+
+  &__btns {
+    width: 193px;
+    margin: 32px auto 0;
+  }
+}
+
+@media only screen and (min-width: $breakpoint-tablet) {
+  .footer {
+    background-image: linear-gradient(
+        rgba(77, 150, 169, 0.9),
+        rgba(77, 150, 169, 0.9)
+      ),
+      url("../../assets/tablet/image-footer.jpg");
+
+    &__text--large {
+      @include font($white, $fw-very-bold, 40px, 44px);
+    }
+
+    &__text--small {
+      margin-top: 32px;
+    }
+
+    &__btns {
+      margin-top: 40px;
+    }
+  }
+}
+
+@media only screen and (min-width: $breakpoint-desktop) {
+  .footer {
+    flex-direction: row;
+    justify-content: space-between;
+    padding-left: 165px;
+    padding-right: 165px;
+    background-image: linear-gradient(
+        rgba(77, 150, 169, 0.9),
+        rgba(77, 150, 169, 0.9)
+      ),
+      url("../../assets/desktop/image-footer.jpg");
+    text-align: left;
+
+    &__text--large {
+      max-width: 350px;
+      text-align: left;
+      margin: 0;
+    }
+
+    &__text--small {
+      max-width: 350px;
+      margin: 0;
+    }
+
+    &__btns {
+      width: 193px;
+      margin: 0;
+    }
+  }
+}

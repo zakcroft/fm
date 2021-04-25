@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="assets/favicon-32x32.png"
+    />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/styles.css" />
+
+    <title>Frontend Mentor | Meet landing page</title>
+  </head>
+  <body>
+    <main class="container">
+      <header class="header">
+        <div class="header__circle header__circle--purple"></div>
+        <div class="header__circle header__circle--turquoise"></div>
+        <img class="header__logo" src="assets/meet.svg" alt="Meet logo" />
+      </header>
+
+      <div class="group">
+        <img
+          class="group--img group--img--full"
+          src="assets/tablet/image-hero.png"
+          alt="Group of people"
+        />
+        <img
+          class="group--img group--img--left"
+          src="assets/desktop/image-hero-left.png"
+          alt="Group of people"
+        />
+        <div class="group-text">
+          <h1 class="group-text__heading">Group chat for Everyone</h1>
+          <p class="group-text__description">
+            Meet makes it easy to connect with others face-to-face virtually and
+            collaborate across any device.
+          </p>
+          <div class="btns group-text__btns">
+            <a class="btn btn__download btn--turquoise" href="/"
+              >Download
+              <span class="btn__download-version--turquoise">v1.3</span></a
+            >
+            <a class="btn btn__what btn--purple" href="/">What is it?</a>
+          </div>
+        </div>
+        <img
+          class="group--img group--img--right"
+          src="assets/desktop/image-hero-right.png"
+          alt="Group of people"
+        />
+      </div>
+
+      <div class="zero-circle zero-circle--one">
+        <span class="zero-circle__line"></span>
+        <span class="zero-circle__circle">01</span>
+      </div>
+
+      <div class="meetings">
+        <span class="meeting__img meeting__img--one"></span>
+        <span class="meeting__img meeting__img--two"></span>
+        <span class="meeting__img meeting__img--three"></span>
+        <span class="meeting__img meeting__img--four"></span>
+      </div>
+
+      <div class="info">
+        <h2 class="info__text info__text--turquoise">Built for modern use</h2>
+        <h2 class="info__text info__text--black">
+          Smarter meetings, all in one place
+        </h2>
+        <p class="info__text info__text--grey">
+          Send messages, share files, show your screen, and record your meetings
+          — all in one workspace. Control who can join with invite&#8209;only
+          team access, data encryption, and data export
+        </p>
+      </div>
+      <div class="zero-circle zero-circle--two">
+        <span class="zero-circle__line"></span>
+        <span class="zero-circle__circle">02</span>
+      </div>
+      <footer class="footer">
+        <h2 class="footer__text footer__text--large">
+          Experience more together
+        </h2>
+        <p class="footer__text footer__text--small">
+          Stay connected with reliable HD meetings and unlimited one-on-one and
+          group video sessions.
+        </p>
+        <div class="btns footer__btns">
+          <a class="btn btn__download btn--purple" href="/"
+            >Download <span class="btn__download-version--purple">v1.3</span></a
+          >
+        </div>
+      </footer>
+    </main>
+    <script id="__bs_script__">
+      //<![CDATA[
+      document.write(
+        "<script async src='http://HOST:3000/browser-sync/browser-sync-client.js?v=2.26.14'><\/script>".replace(
+          "HOST",
+          location.hostname
+        )
+      );
+      //]]>
+    </script>
+  </body>
+</html>
