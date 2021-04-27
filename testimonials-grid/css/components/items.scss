@@ -6,10 +6,9 @@
   box-shadow: 40px 60px 50px -47px rgba(72, 85, 106, 0.247378);
   border-radius: 8px;
 
-  &_1 {
+  &.item_1 {
     @include font($c: $white);
-    background-color: $moderate-violet;
-    //background: url('../../images/bg-pattern-quotation.svg') top right  no-repeat;
+    background: url('../../images/bg-pattern-quotation.svg') 82% top  no-repeat $moderate-violet;
   }
 
   &_2 {
@@ -32,3 +31,5 @@
     background-color: $very-dark-blackish-blue;
   }
 }
+
+

@@ -57,13 +57,13 @@ table {
   box-shadow: 40px 60px 50px -47px rgba(72, 85, 106, 0.247378);
   border-radius: 8px;
 }
-.item_1 {
+.item.item_1 {
   font-family: "Barlow Semi Condensed", sans-serif;
   color: white;
   font-weight: 500;
   font-size: 1rem;
   line-height: 1rem;
-  background-color: #7541c8;
+  background: url("../../images/bg-pattern-quotation.svg") 82% top no-repeat #7541c8;
 }
 .item_2 {
   font-family: "Barlow Semi Condensed", sans-serif;
