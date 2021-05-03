@@ -1,0 +1,169 @@
+@use "../css/utils/vars" as *;
+@use "../css/utils/typography" as *;
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background: url("../assets/mobile/bg-pattern-header.svg");
+  margin-bottom: 97px;
+  padding: 32px 24px 0;
+
+  &__logo {
+    background: url("../assets/mobile/bg-pattern-header.svg");
+  }
+  &__controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 30%;
+    margin-left: 50px;
+  }
+
+  &__slider {
+    display: inline-block;
+    width: 48px;
+    height: 24px;
+    background-color: $white;
+    border-radius: 12px;
+
+    &-btn {
+      display: inline-block;
+      position: relative;
+      top: 5px;
+      left: 5px;
+      width: 14px;
+      height: 14px;
+      background-color: $violet;
+      border-radius: 14px;
+    }
+  }
+
+  &__search {
+    position: relative;
+    top: 30px;
+  }
+
+  &__search-input {
+    @include font($c: $very-dark-blue, $s: 16px, $lh: 16px);
+    color: #19202d;
+    width: 100%;
+
+    padding: 34px 198px 30px 24px;
+    background: #ffffff;
+    border: none;
+    border-radius: 6px;
+    &::placeholder {
+      opacity: 0.5;
+    }
+    box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
+  }
+
+  &__search-filter {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 30px;
+    right: 88px;
+    z-index: 2;
+    background: url("../assets/mobile/icon-filter.svg") no-repeat center;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+  }
+
+  &__search-btn {
+    width: 48px;
+    height: 48px;
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    z-index: 2;
+    background: $violet url("../assets/desktop/icon-search.svg") no-repeat
+      center;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+  }
+}
+
+.job-board {
+  display: grid;
+  //grid-template-columns: repeat(3, 1fr);
+  //grid-template-rows: 300px 300px;
+  //grid-column-gap: 30px;
+  grid-row-gap: 49px;
+  margin: 24px;
+}
+
+.job {
+  $top: -49px;
+  position: relative;
+  list-style: none;
+  padding: 49px 9px 32px 32px;
+  background-color: $white;
+  border: none;
+  border-radius: 6px;
+
+  &__company-logo {
+    background-size: contain;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: calc(#{$top + 25px});
+    background: #df6dae;
+    border-radius: 15px;
+  }
+
+  &__created {
+    @include font($c: $dark-blue);
+    margin-right: 12px;
+
+    &:after {
+      content: "\00B7";
+      margin-left: 12px;
+      color: $dark-blue;
+      width: 40px;
+    }
+  }
+
+  &__type {
+    @include font($c: $dark-blue);
+  }
+
+  &__title {
+    @include font($fw: $fw-bold, $s: 20px, $lh: 20px);
+    margin-top: 16px;
+  }
+
+  &__company {
+    @include font($c: $dark-blue);
+    margin-top: 17px;
+  }
+
+  &__location {
+    @include font($c: $violet, $fw: $fw-bold, $s: 14px, $lh: 14px);
+    margin-top: 44px;
+  }
+}
+
+@media (min-width: $breakpoint-tablet) {
+  .job-board {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 300px 300px;
+    grid-column-gap: 30px;
+    grid-row-gap: 30px;
+  }
+}
+
+@media (min-width: $breakpoint-desktop) {
+  .job-board {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 300px 300px;
+    grid-column-gap: 30px;
+    grid-row-gap: 30px;
+  }
+}

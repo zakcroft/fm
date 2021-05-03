@@ -1,0 +1,35 @@
+@use "./utils/reset";
+@use "./utils/_typography" as *;
+@use "./utils/_vars" as *;
+
+/*@import "components/items";*/
+/*@import "components/person-info";*/
+/*@import "components/testimonies";*/
+
+html {
+  @include font;
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  max-width: 1110px;
+  min-width: 327px;
+  background-color: $body;
+  //display: grid;
+  //grid-template-rows: auto;
+  //grid-row-gap: 24px;
+}
+
+.app {
+  max-width: 1110px;
+  min-width: 327px;
+  display: grid;
+  grid-template-rows: auto;
+  grid-row-gap: 24px;
+  margin: 24px;
+}

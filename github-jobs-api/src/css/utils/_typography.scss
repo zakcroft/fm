@@ -1,0 +1,22 @@
+@use "./_vars" as v;
+
+$font-size-base: 16px;
+$fw-reg: 400;
+$fw-bold: 600;
+
+@function calculateRem($val) {
+  @return ($val / $font-size-base) * 1rem;
+}
+
+@mixin font(
+  $c: inherit,
+  $fw: $fw-reg,
+  $s: $font-size-base,
+  $lh: $font-size-base
+) {
+  font-family: "Kumbh Sans", sans-serif;
+  color: $c;
+  font-weight: $fw;
+  font-size: calculateRem($s);
+  line-height: calculateRem($lh);
+}
