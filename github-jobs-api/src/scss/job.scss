@@ -1,0 +1,57 @@
+@use "./utils/vars" as *;
+@use "./utils/typography" as *;
+
+.job {
+  $top: -49px;
+  position: relative;
+  list-style: none;
+  padding: 49px 9px 32px 32px;
+  background-color: $white;
+  border: none;
+  border-radius: 6px;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &__company-logo {
+    background-size: contain;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: calc(#{$top + 25px});
+    background: #df6dae;
+    border-radius: 15px;
+  }
+
+  &__created {
+    @include font($c: $dark-blue);
+    margin-right: 12px;
+
+    &:after {
+      content: "\00B7";
+      margin-left: 12px;
+      color: $dark-blue;
+      width: 40px;
+    }
+  }
+
+  &__type {
+    @include font($c: $dark-blue);
+  }
+
+  &__title {
+    @include font($fw: $fw-bold, $s: 20px, $lh: 20px);
+    margin-top: 16px;
+  }
+
+  &__company {
+    @include font($c: $dark-blue);
+    margin-top: 17px;
+  }
+
+  &__location {
+    @include font($c: $violet, $fw: $fw-bold, $s: 14px, $lh: 14px);
+    margin-top: 44px;
+  }
+}

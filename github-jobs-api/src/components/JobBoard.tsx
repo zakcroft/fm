@@ -1,24 +1,37 @@
 import React, { useEffect, useState } from "react";
-import Job from "./Job";
 
-import { JobType } from "../types";
 import * as API from "../api/api";
 
-import "../css/jobs.scss";
+import { JobType } from "../types";
 
-export function JobBoard() {
+import { LoadingIndicator } from "./utils";
+import Job from "./Job";
+
+import "../scss/jobs.scss";
+
+interface props {
+  search: string;
+}
+
+export default function JobBoard({ search }: props) {
   const [jobs, setJobs] = useState<JobType[]>([]);
   useEffect(() => {
-    API.fetchPositions().then((data) => {
+    API.fetchPositions({
+      params: {
+        search,
+      },
+    }).then((data) => {
       setJobs(data);
     });
-  }, []);
+  }, [search]);
 
   return (
     <ul className="job-board">
-      {jobs.slice(0, 12).map((j) => (
-        <Job job={j} />
-      ))}
+      {jobs.length ? (
+        jobs.slice(0, 12).map((j) => <Job job={j} />)
+      ) : (
+        <LoadingIndicator msg="Searching" />
+      )}
     </ul>
   );
 }

@@ -33,3 +33,12 @@ body {
   grid-row-gap: 24px;
   margin: 24px;
 }
+
+.spinner {
+  @include font($c: $violet, $s: 22px);
+  font-style: italic;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 40%;
+}

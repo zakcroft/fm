@@ -1,5 +1,5 @@
-@use "../css/utils/vars" as *;
-@use "../css/utils/typography" as *;
+@use "./utils/vars" as *;
+@use "./utils/typography" as *;
 
 .header {
   display: flex;
@@ -19,6 +19,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-grow: 1;
     width: 30%;
     margin-left: 50px;
   }
@@ -43,6 +44,10 @@
   }
 
   &__search {
+    flex-grow: 1;
+    //flex-shrink: 1;
+    //flex-basis: auto;
+    //flex: 1 1 auto; /* Default flex value */
     position: relative;
     top: 30px;
   }
@@ -87,83 +92,5 @@
     border-radius: 5px;
     border: none;
     cursor: pointer;
-  }
-}
-
-.job-board {
-  display: grid;
-  //grid-template-columns: repeat(3, 1fr);
-  //grid-template-rows: 300px 300px;
-  //grid-column-gap: 30px;
-  grid-row-gap: 49px;
-  margin: 24px;
-}
-
-.job {
-  $top: -49px;
-  position: relative;
-  list-style: none;
-  padding: 49px 9px 32px 32px;
-  background-color: $white;
-  border: none;
-  border-radius: 6px;
-
-  &__company-logo {
-    background-size: contain;
-    width: 50px;
-    height: 50px;
-    position: absolute;
-    top: calc(#{$top + 25px});
-    background: #df6dae;
-    border-radius: 15px;
-  }
-
-  &__created {
-    @include font($c: $dark-blue);
-    margin-right: 12px;
-
-    &:after {
-      content: "\00B7";
-      margin-left: 12px;
-      color: $dark-blue;
-      width: 40px;
-    }
-  }
-
-  &__type {
-    @include font($c: $dark-blue);
-  }
-
-  &__title {
-    @include font($fw: $fw-bold, $s: 20px, $lh: 20px);
-    margin-top: 16px;
-  }
-
-  &__company {
-    @include font($c: $dark-blue);
-    margin-top: 17px;
-  }
-
-  &__location {
-    @include font($c: $violet, $fw: $fw-bold, $s: 14px, $lh: 14px);
-    margin-top: 44px;
-  }
-}
-
-@media (min-width: $breakpoint-tablet) {
-  .job-board {
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 300px 300px;
-    grid-column-gap: 30px;
-    grid-row-gap: 30px;
-  }
-}
-
-@media (min-width: $breakpoint-desktop) {
-  .job-board {
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 300px 300px;
-    grid-column-gap: 30px;
-    grid-row-gap: 30px;
   }
 }

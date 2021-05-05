@@ -24,9 +24,16 @@ async function makeRequest(
   return await response.json();
 }
 
-export async function fetchPositions(): Promise<any> {
+interface FetchPositionsProps {
+  params: {};
+}
+
+export async function fetchPositions({
+  params = {},
+}: FetchPositionsProps): Promise<any> {
   return await makeRequest({
     url: `https://jobs.github.com/positions.json`,
+    params,
   });
 }
 
