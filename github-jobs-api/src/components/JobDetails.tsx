@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from "react";
-import { JobType } from "../types";
 import * as API from "../api/api";
 
-interface Props {
+import { useParams } from "react-router-dom";
+
+interface ParamTypes {
   id: string;
 }
 
-export const Job = ({ id }: Props) => {
+export const JobDetails = () => {
+  const { id } = useParams<ParamTypes>();
   const [job, setJob] = useState({
     title: undefined,
   });
@@ -19,4 +21,4 @@ export const Job = ({ id }: Props) => {
   return <li>{job.title}</li>;
 };
 
-export default Job;
+export default JobDetails;

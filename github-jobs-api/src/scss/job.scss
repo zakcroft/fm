@@ -1,5 +1,6 @@
 @use "./utils/vars" as *;
 @use "./utils/typography" as *;
+@use "./utils/common" as *;
 
 .job {
   $top: -49px;

@@ -22,7 +22,7 @@ export const Job: React.FC<Props> = (props: Props) => {
   // console.log(randomColor);
 
   return (
-    <Link to={`/${id}`}>
+    <Link className="text-link" to={`/${id}`}>
       <li className="job">
         {company_logo ? (
           <img

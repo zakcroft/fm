@@ -2,6 +2,10 @@
 @use "./utils/_typography" as *;
 @use "./utils/_vars" as *;
 
+@use "././modal-filter";
+
+//@import-normalize;
+
 /*@import "components/items";*/
 /*@import "components/person-info";*/
 /*@import "components/testimonies";*/

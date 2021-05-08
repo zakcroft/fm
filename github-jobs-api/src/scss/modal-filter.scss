@@ -1,0 +1,71 @@
+@use "./utils/vars" as *;
+@use "./utils/typography" as *;
+
+.modal-filter {
+  width: 327px;
+
+  &__search-input {
+    @include font($s: 16px, $lh: 16px);
+    width: 100%;
+    padding: 30px 30px 26px 57px;
+    background: url("../assets/desktop/icon-location.svg") no-repeat 24px 24px;
+    border: none;
+    border-bottom: 1px solid rgb(110, 128, 152, 0.2);
+    &::placeholder {
+      opacity: 0.5;
+    }
+  }
+
+  ::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+  }
+
+  &__check-input {
+    position: relative;
+    padding: 24px 0 0 24px;
+
+    > input {
+      opacity: 0;
+
+      &:checked + .checkbox-custom:before {
+        display: block;
+        content: "\2713";
+        position: absolute;
+        width: 24px;
+        height: 24px;
+        padding: 6px;
+        color: $violet;
+        text-align: center;
+        background-color: rgba(25, 32, 45, 0.1);
+        z-index: 1;
+      }
+    }
+
+    > .checkbox-custom {
+      position: absolute;
+      top: 24px;
+      left: 24px;
+      height: 24px;
+      width: 24px;
+      background-color: rgba(25, 32, 45, 0.1);
+      border-radius: 3px;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+
+  &__text {
+    @include font($c: $very-dark-blue, $fw: $fw-bold, $s: 16px, $lh: 16px);
+    display: inline-block;
+    padding: 6px 0 0 16px;
+  }
+
+  &__search-btn {
+    width: 279px;
+    margin: 24px;
+    padding: 16px 48px;
+    background: $violet;
+    border-radius: 5px;
+  }
+}

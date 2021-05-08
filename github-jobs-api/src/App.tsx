@@ -13,6 +13,7 @@ import "./scss/App.scss";
 import { LoadingIndicator } from "./components/utils";
 
 import Header from "./components/Header";
+import { FilterModel } from "./components/Model";
 
 const JobBoard = lazy(() => import("./components/JobBoard"));
 const JobDetails = lazy(() => import("./components/JobDetails"));
@@ -20,13 +21,10 @@ const JobDetails = lazy(() => import("./components/JobDetails"));
 type Theme = {
   dark: {};
 };
-interface ParamTypes {
-  id: string;
-}
 
 function App() {
   const [search, setSearch] = useState<string>("");
-  const { id } = useParams<ParamTypes>({});
+  const [isFilterModalOpen, setIsFilterModalOpen] = useState<boolean>(false);
   // const ThemeContext = createContext<Theme>({
   //   dark: {},
   // });
@@ -51,25 +49,34 @@ function App() {
   });
   return (
     // <ThemeContext.Provider value={ThemeContext.dark}>
-    <div className="App">
-      <Header setSearch={setSearch} />
-      <main>
-        <Router>
-          <Switch>
-            <Route path="/:id">
-              <Suspense fallback={<LoadingIndicator msg={"Loading"} />}>
-                <JobDetails id={id} />
-              </Suspense>
-            </Route>
-            <Route path="/">
-              <Suspense fallback={<LoadingIndicator msg={"Loading"} />}>
-                <JobBoard search={search} />
-              </Suspense>
-            </Route>
-          </Switch>
-        </Router>
-      </main>
-    </div>
+    <>
+      <div className="App">
+        <Header
+          setSearch={setSearch}
+          setIsFilterModalOpen={setIsFilterModalOpen}
+        />
+        <main>
+          <Router>
+            <Switch>
+              <Route path="/:id">
+                <Suspense fallback={<LoadingIndicator msg={"Loading"} />}>
+                  <JobDetails />
+                </Suspense>
+              </Route>
+              <Route path="/">
+                <Suspense fallback={<LoadingIndicator msg={"Loading"} />}>
+                  <JobBoard search={search} />
+                </Suspense>
+              </Route>
+            </Switch>
+          </Router>
+        </main>
+      </div>
+      <FilterModel
+        isOpen={isFilterModalOpen}
+        onClose={() => setIsFilterModalOpen(false)}
+      />
+    </>
     // </ThemeContext.Provider>
   );
 }

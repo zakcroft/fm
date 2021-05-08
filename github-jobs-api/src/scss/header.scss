@@ -61,10 +61,10 @@
     background: #ffffff;
     border: none;
     border-radius: 6px;
+    box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
     &::placeholder {
       opacity: 0.5;
     }
-    box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
   }
 
   &__search-filter {

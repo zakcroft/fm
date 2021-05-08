@@ -1,0 +1,21 @@
+.text-link {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+.modal-outer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+.modal-inner {
+  background: white;
+  border-radius: 6px;
+}
