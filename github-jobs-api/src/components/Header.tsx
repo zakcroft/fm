@@ -1,5 +1,7 @@
 import React, { useEffect, useState, Dispatch, SetStateAction } from "react";
 import Job from "./Job";
+import classnames from "classnames";
+import { A, AT } from "../state/toggleDarkModeReducer";
 
 import logo from "../assets/desktop/logo.svg";
 import sun from "../assets/desktop/icon-sun.svg";
@@ -10,16 +12,28 @@ import "../scss/header.scss";
 interface props {
   setSearch: Dispatch<SetStateAction<string>>;
   setIsFilterModalOpen: Dispatch<SetStateAction<boolean>>;
+  toggleDarkMode: Dispatch<A>;
+  isDarkMode: boolean;
 }
 
-export default function Header({ setSearch, setIsFilterModalOpen }: props) {
+export default function Header({
+  setSearch,
+  setIsFilterModalOpen,
+  toggleDarkMode,
+  isDarkMode,
+}: props) {
   return (
     <header className="header">
       <img className="header__logo" src={logo} alt={""} />
       <div className="header__controls">
         <img className="header__sun" src={sun} alt={""} />
-        <span className="header__slider">
-          <span className="header__slider-btn" />
+        <span
+          className="header__slider"
+          onClick={() => toggleDarkMode({ type: AT.TOGGLE_DARK_THEME })}
+        >
+          <span
+            className={classnames("header__slider-btn", { on: isDarkMode })}
+          />
         </span>
         <img className="header__moon" src={moon} alt={""} />
       </div>

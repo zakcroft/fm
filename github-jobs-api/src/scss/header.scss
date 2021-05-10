@@ -1,6 +1,26 @@
 @use "./utils/vars" as *;
 @use "./utils/typography" as *;
 
+@keyframes darkModeOn {
+  from {
+    left: 5px;
+  }
+
+  to {
+    left: 28px;
+  }
+}
+
+@keyframes darkModeOff {
+  from {
+    left: 28px;
+  }
+
+  to {
+    left: 5px;
+  }
+}
+
 .header {
   display: flex;
   justify-content: space-between;
@@ -21,10 +41,11 @@
     align-items: center;
     flex-grow: 1;
     width: 30%;
-    margin-left: 50px;
+    margin-left: 100px;
   }
 
   &__slider {
+    cursor: pointer;
     display: inline-block;
     width: 48px;
     height: 24px;
@@ -40,6 +61,12 @@
       height: 14px;
       background-color: $violet;
       border-radius: 14px;
+      animation: darkModeOff;
+      animation-duration: 0.3s;
+      &.on {
+        animation: darkModeOn forwards;
+        animation-duration: 0.3s;
+      }
     }
   }
 

@@ -1,4 +1,12 @@
-import React, { lazy, Suspense, createContext, useState } from "react";
+import React, {
+  lazy,
+  Suspense,
+  createContext,
+  useState,
+  useReducer,
+  Dispatch,
+  SetStateAction,
+} from "react";
 import {
   BrowserRouter as Router,
   Switch,
@@ -7,26 +15,28 @@ import {
   useRouteMatch,
   useParams,
 } from "react-router-dom";
-
+import classnames from "classnames";
 import moment from "moment";
 import "./scss/App.scss";
 import { LoadingIndicator } from "./components/utils";
-
+import useToggleDarkMode from "./state/toggleDarkModeReducer";
 import Header from "./components/Header";
 import { FilterModel } from "./components/Model";
 
 const JobBoard = lazy(() => import("./components/JobBoard"));
 const JobDetails = lazy(() => import("./components/JobDetails"));
 
-type Theme = {
-  dark: {};
-};
+// type Theme = {
+//   isDarkMode: boolean;
+// };
 
 function App() {
   const [search, setSearch] = useState<string>("");
   const [isFilterModalOpen, setIsFilterModalOpen] = useState<boolean>(false);
+  const [isDarkMode, toggleDarkMode] = useToggleDarkMode();
+
   // const ThemeContext = createContext<Theme>({
-  //   dark: {},
+  //   isDarkMode,
   // });
 
   moment.locale("en", {
@@ -48,12 +58,14 @@ function App() {
     },
   });
   return (
-    // <ThemeContext.Provider value={ThemeContext.dark}>
+    // <ThemeContext.Provider value={ThemeContext}>
     <>
-      <div className="App">
+      <div className={classnames("App", { "dark-theme": isDarkMode })}>
         <Header
           setSearch={setSearch}
           setIsFilterModalOpen={setIsFilterModalOpen}
+          toggleDarkMode={toggleDarkMode}
+          isDarkMode={isDarkMode}
         />
         <main>
           <Router>
