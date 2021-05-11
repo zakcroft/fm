@@ -5,7 +5,6 @@
   from {
     left: 5px;
   }
-
   to {
     left: 28px;
   }
@@ -15,7 +14,6 @@
   from {
     left: 28px;
   }
-
   to {
     left: 5px;
   }
@@ -33,15 +31,16 @@
   padding: 32px 24px 0;
 
   &__logo {
+    margin-right: auto;
     background: url("../assets/mobile/bg-pattern-header.svg");
   }
+
   &__controls {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
-    flex-grow: 1;
-    width: 30%;
-    margin-left: 100px;
+    width: 110px;
+    margin-left: auto;
   }
 
   &__slider {
@@ -70,11 +69,15 @@
     }
   }
 
+  &__searches-mobile {
+    flex-basis: 100%;
+  }
+
+  &__searches-tablet {
+    display: none;
+  }
+
   &__search {
-    flex-grow: 1;
-    //flex-shrink: 1;
-    //flex-basis: auto;
-    //flex: 1 1 auto; /* Default flex value */
     position: relative;
     top: 30px;
   }
@@ -119,5 +122,30 @@
     border-radius: 5px;
     border: none;
     cursor: pointer;
+  }
+}
+
+@media (min-width: $breakpoint-tablet) {
+  .header {
+    background: url("../assets/tablet/bg-pattern-header.svg");
+
+    &__searches-mobile {
+      display: none;
+    }
+    &__searches-tablet {
+      display: block;
+    }
+    &__searches {
+      flex-basis: auto;
+    }
+  }
+}
+
+@media (min-width: $breakpoint-desktop) {
+  .job-board {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 300px 300px;
+    grid-column-gap: 30px;
+    grid-row-gap: 30px;
   }
 }

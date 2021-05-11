@@ -9,7 +9,6 @@ export type A = {
 };
 
 const toggleDarkModeReducer = (state: boolean, action: A) => {
-  console.log(action.type);
   switch (action.type) {
     case AT.TOGGLE_DARK_THEME:
       return !state;

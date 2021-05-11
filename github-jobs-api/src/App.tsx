@@ -21,7 +21,7 @@ import "./scss/App.scss";
 import { LoadingIndicator } from "./components/utils";
 import useToggleDarkMode from "./state/toggleDarkModeReducer";
 import Header from "./components/Header";
-import { FilterModel } from "./components/Model";
+import { FilterModel } from "./components/FilterModel";
 
 const JobBoard = lazy(() => import("./components/JobBoard"));
 const JobDetails = lazy(() => import("./components/JobDetails"));
@@ -87,6 +87,7 @@ function App() {
       <FilterModel
         isOpen={isFilterModalOpen}
         onClose={() => setIsFilterModalOpen(false)}
+        setSearch={setSearch}
       />
     </>
     // </ThemeContext.Provider>
