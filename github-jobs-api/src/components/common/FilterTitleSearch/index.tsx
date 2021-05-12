@@ -1,14 +1,15 @@
 import { Dispatch, SetStateAction } from "react";
+import "./filter-title-search.scss";
 
 interface Props {
   setSearch: Dispatch<SetStateAction<string>>;
 }
 
-export const FilterLocationSearch = ({ setSearch }: Props) => (
+export const FilterTitleSearch = ({ setSearch }: Props) => (
   <input
-    type="search"
-    className="modal-filter__search-input"
-    placeholder="Filter by location"
+    className="title__search-input"
+    type="text"
+    placeholder="Filter By Title"
     onChange={(e) => setSearch(e.target.value)}
   />
 );

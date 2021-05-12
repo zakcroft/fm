@@ -1,16 +1,17 @@
 import React, { useEffect, useState, Dispatch, SetStateAction } from "react";
-import Job from "./Job";
+
 import classnames from "classnames";
 import { A, AT } from "../state/toggleDarkModeReducer";
+
 import { FullTimeOnlyCheck } from "./common/FullTimeOnlyCheck";
 import { FilterLocationSearch } from "./common/FilterLocationSearch";
+import { FilterTitleSearch } from "./common/FilterTitleSearch";
 
 import logo from "../assets/desktop/logo.svg";
 import sun from "../assets/desktop/icon-sun.svg";
 import moon from "../assets/desktop/icon-moon.svg";
 
 import "../scss/header.scss";
-import { FilterTitleSearch } from "./common/FilterTitleSearch";
 
 interface props {
   setSearch: Dispatch<SetStateAction<string>>;
@@ -40,22 +41,20 @@ export default function Header({
         </span>
         <img className="header__moon" src={moon} alt={""} />
       </div>
-      <div className="header__searches-mobile">
-        <div className="header__search">
-          <FilterTitleSearch setSearch={setSearch} />
-          <button
-            className="header__search-filter"
-            onClick={() => setIsFilterModalOpen(true)}
-          />
-          <button className="header__search-btn" />
-        </div>
+
+      <div className="header__search-mobile">
+        <FilterTitleSearch setSearch={setSearch} />
+        <button
+          className="header__search-filter"
+          onClick={() => setIsFilterModalOpen(true)}
+        />
+        <button className="header__search-btn" />
       </div>
-      <div className="header__searches-tablet">
-        <div className="header__search">
-          <FilterTitleSearch setSearch={setSearch} />
-          <FilterLocationSearch setSearch={setSearch} />
-          <FullTimeOnlyCheck setSearch={setSearch} />
-        </div>
+
+      <div className="header__search-tablet">
+        <FilterTitleSearch setSearch={setSearch} />
+        <FilterLocationSearch setSearch={setSearch} />
+        <FullTimeOnlyCheck setSearch={setSearch} useSearchBtn />
       </div>
     </header>
   );

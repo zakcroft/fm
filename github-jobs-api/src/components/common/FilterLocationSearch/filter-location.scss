@@ -1,0 +1,15 @@
+@use "../../../scss/utils/vars" as *;
+@use "../../../scss/utils/typography" as *;
+
+.location__search-input {
+  @include font($s: 16px, $lh: 16px);
+  width: 100%;
+  padding: 30px 30px 26px 57px;
+  background: url("../../../assets/desktop/icon-location.svg") no-repeat 24px
+    24px;
+  border: none;
+  border-bottom: 1px solid rgb(110, 128, 152, 0.2);
+  &::placeholder {
+    opacity: 0.5;
+  }
+}

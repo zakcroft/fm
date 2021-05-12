@@ -12,9 +12,9 @@ export const FilterModel = (props: Props) => {
   return (
     <Modal classes="modal-filter" {...props}>
       <FilterLocationSearch setSearch={setSearch} />
-      <FullTimeOnlyCheck setSearch={setSearch} />
+      <FullTimeOnlyCheck setSearch={setSearch} useOnly />
 
-      <button className="modal-filter__search-btn">Search</button>
+      <button className="search-btn search-btn--large">Search</button>
     </Modal>
   );
 };

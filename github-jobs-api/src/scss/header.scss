@@ -69,25 +69,22 @@
     }
   }
 
-  &__searches-mobile {
-    flex-basis: 100%;
-  }
-
-  &__searches-tablet {
+  &__search-tablet {
     display: none;
   }
 
-  &__search {
+  &__search-mobile,
+  &__search-tablet {
+    flex-basis: 100%;
     position: relative;
     top: 30px;
   }
 
-  &__search-input {
+  .title__search-input {
     @include font($c: $very-dark-blue, $s: 16px, $lh: 16px);
     color: #19202d;
     width: 100%;
-
-    padding: 34px 198px 30px 24px;
+    padding: 34px 0px 30px 24px;
     background: #ffffff;
     border: none;
     border-radius: 6px;
@@ -127,16 +124,46 @@
 
 @media (min-width: $breakpoint-tablet) {
   .header {
-    background: url("../assets/tablet/bg-pattern-header.svg");
+    background: url("../assets/desktop/bg-pattern-header.svg") no-repeat;
 
-    &__searches-mobile {
+    &__search-mobile {
       display: none;
     }
-    &__searches-tablet {
-      display: block;
+    &__search-tablet {
+      @include font($c: $very-dark-blue, $s: 16px, $lh: 16px);
+      display: flex;
+      background: #ffffff;
+      border-radius: 6px;
+      color: #19202d;
+      box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
     }
-    &__searches {
-      flex-basis: auto;
+
+    .title__search-input,
+    .location__search-input {
+      flex-basis: 33.3333%;
+      border: none;
+      box-shadow: none;
+      padding: 34px 0 30px 64px;
+      &::placeholder {
+        opacity: 0.5;
+      }
+    }
+
+    .title__search-input {
+      background: url("../assets/desktop/icon-search-purple.svg") 17px 28px
+        no-repeat;
+    }
+
+    .location__search-input {
+      background: url("../assets/desktop/icon-location.svg") 17px 28px no-repeat;
+    }
+
+    .ft__check-input {
+      padding: 20px 0 0 20px;
+    }
+
+    .ft__check-input > .checkbox-custom {
+      top: 28px;
     }
   }
 }
