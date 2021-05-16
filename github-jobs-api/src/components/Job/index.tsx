@@ -3,9 +3,9 @@ import moment from "moment";
 
 import { Link } from "react-router-dom";
 
-import { JobType } from "../types";
+import { JobType } from "../../types";
 
-import "../scss/job.scss";
+import "./job.scss";
 
 interface Props {
   job: JobType;

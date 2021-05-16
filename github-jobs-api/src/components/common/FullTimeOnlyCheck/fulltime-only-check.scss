@@ -2,11 +2,14 @@
 @use "../../../scss/utils/typography" as *;
 
 .ft__check-input {
+  display: inline-block;
   position: relative;
   padding: 24px 0 0 24px;
 
   > input {
     opacity: 0;
+    position: absolute;
+    top: -1000px;
 
     &:checked + .checkbox-custom:before {
       display: block;
@@ -23,9 +26,7 @@
   }
 
   > .checkbox-custom {
-    position: absolute;
-    top: 24px;
-    left: 24px;
+    display: inline-block;
     height: 24px;
     width: 24px;
     background-color: rgba(25, 32, 45, 0.1);
@@ -34,10 +35,27 @@
       cursor: pointer;
     }
   }
+
+  .ft__text {
+    @include font($c: $very-dark-blue, $fw: $fw-bold, $s: 16px, $lh: 16px);
+    display: inline-block;
+    margin-left: 16px;
+    vertical-align: super;
+  }
 }
 
-.ft__text {
-  @include font($c: $very-dark-blue, $fw: $fw-bold, $s: 16px, $lh: 16px);
-  display: inline-block;
-  padding: 6px 0 0 16px;
+.search-btn {
+  margin: 16px;
+}
+
+@media (min-width: $breakpoint-tablet) {
+  .ft__check-input {
+    flex-basis: 136px;
+    padding: 28px 0 0 20px;
+    border-left: solid 1px rgb(110, 128, 152, 0.2);
+  }
+
+  .ft__check-search-btn {
+    margin-left: 28px;
+  }
 }

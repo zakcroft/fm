@@ -2,8 +2,6 @@
 @use "./utils/_typography" as *;
 @use "./utils/_vars" as *;
 
-@use "././modal-filter";
-
 html {
   @include font;
   box-sizing: border-box;

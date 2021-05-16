@@ -1,5 +1,5 @@
 import { createPortal } from "react-dom";
-
+import "./modal-filter.scss";
 // implementations
 export interface ModelImplProps {
   isOpen: boolean;

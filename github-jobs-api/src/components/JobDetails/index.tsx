@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import * as API from "../api/api";
+import * as API from "../../api/api";
 
 import { useParams } from "react-router-dom";
 
@@ -7,7 +7,7 @@ interface ParamTypes {
   id: string;
 }
 
-export const JobDetails = () => {
+const JobDetails = () => {
   const { id } = useParams<ParamTypes>();
   const [job, setJob] = useState({
     title: undefined,

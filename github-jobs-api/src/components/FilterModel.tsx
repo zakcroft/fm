@@ -1,4 +1,4 @@
-import { Modal, ModelImplProps } from "./common/Model";
+import { Modal, ModelImplProps } from "./common/Modal";
 import { FilterLocationSearch } from "./common/FilterLocationSearch";
 import { FullTimeOnlyCheck } from "./common/FullTimeOnlyCheck";
 import { Dispatch, SetStateAction } from "react";
@@ -13,8 +13,6 @@ export const FilterModel = (props: Props) => {
     <Modal classes="modal-filter" {...props}>
       <FilterLocationSearch setSearch={setSearch} />
       <FullTimeOnlyCheck setSearch={setSearch} useOnly />
-
-      <button className="search-btn search-btn--large">Search</button>
     </Modal>
   );
 };

@@ -1,5 +1,5 @@
-@use "./utils/vars" as *;
-@use "./utils/typography" as *;
+@use "../../scss/utils/vars" as *;
+@use "../../scss/utils/typography" as *;
 
 .job-board {
   display: grid;

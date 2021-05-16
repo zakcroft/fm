@@ -13,3 +13,18 @@
     opacity: 0.5;
   }
 }
+
+@media (min-width: $breakpoint-tablet) {
+  .location__search-input {
+    flex-basis: 222px;
+    border: none;
+    box-shadow: none;
+    padding: 34px 0 30px 64px;
+    &::placeholder {
+      opacity: 0.5;
+    }
+    background: url("../../../assets/desktop/icon-location.svg") 17px 28px
+      no-repeat;
+    border-left: solid 1px rgb(110, 128, 152, 0.2);
+  }
+}

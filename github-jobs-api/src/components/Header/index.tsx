@@ -1,17 +1,17 @@
 import React, { useEffect, useState, Dispatch, SetStateAction } from "react";
 
 import classnames from "classnames";
-import { A, AT } from "../state/toggleDarkModeReducer";
+import { A, AT } from "../../state/toggleDarkModeReducer";
 
-import { FullTimeOnlyCheck } from "./common/FullTimeOnlyCheck";
-import { FilterLocationSearch } from "./common/FilterLocationSearch";
-import { FilterTitleSearch } from "./common/FilterTitleSearch";
+import { FullTimeOnlyCheck } from "../common/FullTimeOnlyCheck";
+import { FilterLocationSearch } from "../common/FilterLocationSearch";
+import { FilterTitleSearch } from "../common/FilterTitleSearch";
 
-import logo from "../assets/desktop/logo.svg";
-import sun from "../assets/desktop/icon-sun.svg";
-import moon from "../assets/desktop/icon-moon.svg";
+import logo from "../../assets/desktop/logo.svg";
+import sun from "../../assets/desktop/icon-sun.svg";
+import moon from "../../assets/desktop/icon-moon.svg";
 
-import "../scss/header.scss";
+import "./header.scss";
 
 interface props {
   setSearch: Dispatch<SetStateAction<string>>;
@@ -43,18 +43,19 @@ export default function Header({
       </div>
 
       <div className="header__search-mobile">
-        <FilterTitleSearch setSearch={setSearch} />
-        <button
-          className="header__search-filter"
-          onClick={() => setIsFilterModalOpen(true)}
+        <FilterTitleSearch
+          setSearch={setSearch}
+          setIsFilterModalOpen={setIsFilterModalOpen}
         />
-        <button className="header__search-btn" />
       </div>
 
       <div className="header__search-tablet">
-        <FilterTitleSearch setSearch={setSearch} />
+        <FilterTitleSearch
+          setSearch={setSearch}
+          setIsFilterModalOpen={setIsFilterModalOpen}
+        />
         <FilterLocationSearch setSearch={setSearch} />
-        <FullTimeOnlyCheck setSearch={setSearch} useSearchBtn />
+        <FullTimeOnlyCheck setSearch={setSearch} />
       </div>
     </header>
   );

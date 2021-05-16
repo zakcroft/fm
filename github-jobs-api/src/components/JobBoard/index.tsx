@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
 
-import * as API from "../api/api";
+import * as API from "../../api/api";
 
-import { JobType } from "../types";
+import { JobType } from "../../types";
 
-import { LoadingIndicator } from "./utils";
-import Job from "./Job";
+import { LoadingIndicator } from "../utils";
+import Job from "../Job";
 
-import "../scss/jobs.scss";
+import "./job-board.scss";
 
 interface props {
   search: string;

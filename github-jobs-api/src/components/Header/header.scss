@@ -1,5 +1,5 @@
-@use "./utils/vars" as *;
-@use "./utils/typography" as *;
+@use "../../scss/utils/vars" as *;
+@use "../../scss/utils/typography" as *;
 
 @keyframes darkModeOn {
   from {
@@ -26,13 +26,13 @@
   position: sticky;
   top: 0;
   z-index: 1;
-  background: url("../assets/mobile/bg-pattern-header.svg");
+  background: url("../../assets/mobile/bg-pattern-header.svg");
   margin-bottom: 97px;
   padding: 32px 24px 0;
 
   &__logo {
     margin-right: auto;
-    background: url("../assets/mobile/bg-pattern-header.svg");
+    background: url("../../assets/mobile/bg-pattern-header.svg");
   }
 
   &__controls {
@@ -79,52 +79,11 @@
     position: relative;
     top: 30px;
   }
-
-  .title__search-input {
-    @include font($c: $very-dark-blue, $s: 16px, $lh: 16px);
-    color: #19202d;
-    width: 100%;
-    padding: 34px 0px 30px 24px;
-    background: #ffffff;
-    border: none;
-    border-radius: 6px;
-    box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
-    &::placeholder {
-      opacity: 0.5;
-    }
-  }
-
-  &__search-filter {
-    width: 20px;
-    height: 20px;
-    position: absolute;
-    top: 30px;
-    right: 88px;
-    z-index: 2;
-    background: url("../assets/mobile/icon-filter.svg") no-repeat center;
-    border-radius: 5px;
-    border: none;
-    cursor: pointer;
-  }
-
-  &__search-btn {
-    width: 48px;
-    height: 48px;
-    position: absolute;
-    top: 16px;
-    right: 16px;
-    z-index: 2;
-    background: $violet url("../assets/desktop/icon-search.svg") no-repeat
-      center;
-    border-radius: 5px;
-    border: none;
-    cursor: pointer;
-  }
 }
 
 @media (min-width: $breakpoint-tablet) {
   .header {
-    background: url("../assets/desktop/bg-pattern-header.svg") no-repeat;
+    background: url("../../assets/desktop/bg-pattern-header.svg") no-repeat;
 
     &__search-mobile {
       display: none;
@@ -136,34 +95,6 @@
       border-radius: 6px;
       color: #19202d;
       box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
-    }
-
-    .title__search-input,
-    .location__search-input {
-      flex-basis: 33.3333%;
-      border: none;
-      box-shadow: none;
-      padding: 34px 0 30px 64px;
-      &::placeholder {
-        opacity: 0.5;
-      }
-    }
-
-    .title__search-input {
-      background: url("../assets/desktop/icon-search-purple.svg") 17px 28px
-        no-repeat;
-    }
-
-    .location__search-input {
-      background: url("../assets/desktop/icon-location.svg") 17px 28px no-repeat;
-    }
-
-    .ft__check-input {
-      padding: 20px 0 0 20px;
-    }
-
-    .ft__check-input > .checkbox-custom {
-      top: 28px;
     }
   }
 }
