@@ -43,7 +43,11 @@
 
   &__title {
     @include font($fw: $fw-bold, $s: 20px, $lh: 20px);
+    width: 250px;
     margin-top: 16px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   &__company {
