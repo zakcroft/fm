@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { createContext, Dispatch, SetStateAction, useState } from "react";
 import { useMediaQuery } from "react-responsive";
+import { SearchType } from "./types";
 
 export const useSearch = () => {
   const [search, setSearch] = useState<string>("");
@@ -12,3 +13,13 @@ export const useDeviceSizes = () => {
 
   return { isMobile, isTablet, isDesktop };
 };
+
+export const SetSearchContext = createContext<{
+  search: SearchType;
+  setSearch: React.Dispatch<React.SetStateAction<SearchType>>;
+}>({
+  search: undefined,
+  setSearch(
+    value: ((prevState: SearchType) => SearchType) | SearchType
+  ): void {},
+});

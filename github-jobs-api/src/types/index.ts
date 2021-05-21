@@ -11,3 +11,9 @@ export type JobType = {
   type: string;
   url: string;
 };
+
+export type SearchType = {
+  description: string;
+  location: string;
+  full_time: boolean;
+};

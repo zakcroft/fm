@@ -1,16 +1,22 @@
-import { Dispatch, SetStateAction } from "react";
+import { Dispatch, SetStateAction, useContext } from "react";
 
 import "./filter-location.scss";
+import { SearchEnum } from "../../../constants";
+import { SetSearchContext } from "../../../hooks";
 
-interface Props {
-  setSearch: Dispatch<SetStateAction<string>>;
-}
-
-export const FilterLocationSearch = ({ setSearch }: Props) => (
-  <input
-    type="search"
-    className="location__search-input"
-    placeholder="Filter by location"
-    onChange={(e) => setSearch(e.target.value)}
-  />
-);
+export const FilterLocationSearch = () => {
+  const { setSearch } = useContext(SetSearchContext);
+  return (
+    <input
+      type="search"
+      className="location__search-input"
+      placeholder="Filter by location"
+      onChange={(e) =>
+        setSearch((prevState) => ({
+          ...prevState,
+          ...{ [SearchEnum.LOCATION]: e.target.value },
+        }))
+      }
+    />
+  );
+};

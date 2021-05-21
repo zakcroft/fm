@@ -6,7 +6,6 @@ interface MakeRequestProps {
 
 function getUrlParams(params: any) {
   const queryString: string = new URLSearchParams(params).toString();
-  console.log(queryString);
   return queryString;
 }
 

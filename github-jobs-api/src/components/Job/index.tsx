@@ -34,8 +34,8 @@ export const Job: React.FC<Props> = (props: Props) => {
         ) : null}
         <span className="job__created"> {daysAgo}</span>
         <span className="job__type"> {type}</span>
-        <h2 className="job__title"> {title}</h2>
-        <h2 className="job__company"> {company}</h2>
+        <h2 className="job__title truncate"> {title}</h2>
+        <h2 className="job__company truncate"> {company}</h2>
         <p className="job__location"> {location}</p>
       </li>
     </Link>

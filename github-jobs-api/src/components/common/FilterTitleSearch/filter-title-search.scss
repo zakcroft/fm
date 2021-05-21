@@ -55,3 +55,9 @@
       no-repeat;
   }
 }
+
+@media (min-width: $breakpoint-desktop) {
+  .title__search-input {
+    flex-basis: 400px;
+  }
+}

@@ -13,17 +13,18 @@ html {
 }
 
 body {
+  background-color: $body;
+}
+
+#root {
   max-width: 1110px;
   min-width: 360px;
-  background-color: $body;
-  //display: grid;
-  //grid-template-rows: auto;
-  //grid-row-gap: 24px;
+  margin: 0 auto;
 }
 
 .app {
-  max-width: 1110px;
-  min-width: 327px;
+  //max-width: 1110px;
+  //min-width: 327px;
   display: grid;
   grid-template-rows: auto;
   grid-row-gap: 24px;
@@ -31,10 +32,10 @@ body {
 }
 
 .spinner {
-  @include font($c: $violet, $s: 22px);
+  @include font($c: $violet, $s: 40px);
   font-style: italic;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 40%;
+  padding-top: 10%;
 }

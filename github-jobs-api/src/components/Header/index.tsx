@@ -14,14 +14,12 @@ import moon from "../../assets/desktop/icon-moon.svg";
 import "./header.scss";
 
 interface props {
-  setSearch: Dispatch<SetStateAction<string>>;
   setIsFilterModalOpen: Dispatch<SetStateAction<boolean>>;
   toggleDarkMode: Dispatch<A>;
   isDarkMode: boolean;
 }
 
 export default function Header({
-  setSearch,
   setIsFilterModalOpen,
   toggleDarkMode,
   isDarkMode,
@@ -43,19 +41,13 @@ export default function Header({
       </div>
 
       <div className="header__search-mobile">
-        <FilterTitleSearch
-          setSearch={setSearch}
-          setIsFilterModalOpen={setIsFilterModalOpen}
-        />
+        <FilterTitleSearch setIsFilterModalOpen={setIsFilterModalOpen} />
       </div>
 
       <div className="header__search-tablet">
-        <FilterTitleSearch
-          setSearch={setSearch}
-          setIsFilterModalOpen={setIsFilterModalOpen}
-        />
-        <FilterLocationSearch setSearch={setSearch} />
-        <FullTimeOnlyCheck setSearch={setSearch} />
+        <FilterTitleSearch setIsFilterModalOpen={setIsFilterModalOpen} />
+        <FilterLocationSearch />
+        <FullTimeOnlyCheck />
       </div>
     </header>
   );

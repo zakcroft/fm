@@ -21,23 +21,24 @@ import "./scss/App.scss";
 import { LoadingIndicator } from "./components/utils";
 import useToggleDarkMode from "./state/toggleDarkModeReducer";
 import Header from "./components/Header";
-import { FilterModel } from "./components/FilterModel";
+import { FilterModel } from "./components/common/Modal/FilterModel";
+import { SetSearchContext } from "./hooks";
+import { SearchType } from "./types";
+import { SearchEnum } from "./constants";
 
 const JobBoard = lazy(() => import("./components/JobBoard"));
 const JobDetails = lazy(() => import("./components/JobDetails"));
 
-// type Theme = {
-//   isDarkMode: boolean;
-// };
-
 function App() {
-  const [search, setSearch] = useState<string>("");
+  const [search, setSearch] = useState<SearchType>({
+    [SearchEnum.DESCRIPTION]: "",
+    [SearchEnum.LOCATION]: "",
+    [SearchEnum.FULL_TIME]: false,
+  });
   const [isFilterModalOpen, setIsFilterModalOpen] = useState<boolean>(false);
   const [isDarkMode, toggleDarkMode] = useToggleDarkMode();
 
-  // const ThemeContext = createContext<Theme>({
-  //   isDarkMode,
-  // });
+  console.log("App search", search);
 
   moment.locale("en", {
     relativeTime: {
@@ -58,11 +59,9 @@ function App() {
     },
   });
   return (
-    // <ThemeContext.Provider value={ThemeContext}>
-    <>
+    <SetSearchContext.Provider value={{ search, setSearch }}>
       <div className={classnames("App", { "dark-theme": isDarkMode })}>
         <Header
-          setSearch={setSearch}
           setIsFilterModalOpen={setIsFilterModalOpen}
           toggleDarkMode={toggleDarkMode}
           isDarkMode={isDarkMode}
@@ -87,10 +86,8 @@ function App() {
       <FilterModel
         isOpen={isFilterModalOpen}
         onClose={() => setIsFilterModalOpen(false)}
-        setSearch={setSearch}
       />
-    </>
-    // </ThemeContext.Provider>
+    </SetSearchContext.Provider>
   );
 }
 

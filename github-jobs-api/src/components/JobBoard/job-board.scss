@@ -3,11 +3,13 @@
 
 .job-board {
   display: grid;
-  //grid-template-columns: repeat(3, 1fr);
-  //grid-template-rows: 300px 300px;
-  //grid-column-gap: 30px;
   grid-row-gap: 49px;
   margin: 24px;
+}
+
+.job-board-btn {
+  margin: 60px auto;
+  display: block;
 }
 
 @media (min-width: $breakpoint-tablet) {
@@ -21,8 +23,5 @@
 @media (min-width: $breakpoint-desktop) {
   .job-board {
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 300px 300px;
-    grid-column-gap: 30px;
-    grid-row-gap: 30px;
   }
 }

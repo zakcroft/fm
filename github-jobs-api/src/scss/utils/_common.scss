@@ -33,7 +33,23 @@
   padding: 16px 48px;
 }
 
+.search-btn--medium {
+  width: 141px;
+  padding: 16px 30px;
+}
+
 .search-btn--small {
   width: 80px;
   padding: 14px 16px;
+}
+
+.truncate {
+  width: 250px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+::-webkit-search-cancel-button {
+  -webkit-appearance: none;
 }

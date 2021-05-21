@@ -1,16 +1,16 @@
-import { Dispatch, SetStateAction } from "react";
+import { useContext, Dispatch, SetStateAction } from "react";
 import "./fulltime-only-check.scss";
 import { useDeviceSizes } from "../../../hooks";
 import classnames from "classnames";
-
+import { SetSearchContext } from "../../../hooks";
+import { SearchEnum } from "../../../constants";
 interface Props {
-  setSearch: Dispatch<SetStateAction<string>>;
   useOnly?: boolean;
 }
 
-export const FullTimeOnlyCheck = ({ setSearch, useOnly }: Props) => {
+export const FullTimeOnlyCheck = ({ useOnly }: Props) => {
   const { isMobile, isTablet } = useDeviceSizes();
-
+  const { search, setSearch } = useContext(SetSearchContext);
   const id = Math.random().toString();
   return (
     <>
@@ -18,7 +18,17 @@ export const FullTimeOnlyCheck = ({ setSearch, useOnly }: Props) => {
         <input
           type="checkbox"
           id={id}
-          onChange={(e) => setSearch(e.target.value)}
+          defaultChecked={search[SearchEnum.FULL_TIME]}
+          checked={!!search[SearchEnum.FULL_TIME]}
+          onChange={(e) => {
+            console.log(e.target.checked);
+            setSearch((prevState) => ({
+              ...prevState,
+              ...{
+                [SearchEnum.FULL_TIME]: e.target.checked,
+              },
+            }));
+          }}
         />
         <label htmlFor={id.toString()} className="checkbox-custom" />
         <span className="ft__text">Full Time {isMobile ? "Only" : ""}</span>
